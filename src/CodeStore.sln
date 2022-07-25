@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{FABD14AD-BD44-42E3-AAC5-3F47E4AAB7F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Catalog.API\Catalog.API.csproj", "{578DBDEC-A6F8-4C37-9F38-AD9C52414AD1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "services\catalog\Catalog.API\Catalog.API.csproj", "{578DBDEC-A6F8-4C37-9F38-AD9C52414AD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
