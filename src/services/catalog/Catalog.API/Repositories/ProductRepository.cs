@@ -1,11 +1,3 @@
-<<<<<<< HEAD:src/services/catalog/Catalog.API/Repositories/ProductRepository.cs
-using Catalog.API.Data;
-using Catalog.API.Entities;
-=======
-﻿using Catalog.API.Data.Interfaces;
-using Catalog.API.Entities;
-using Catalog.API.Repositories.Interfaces;
->>>>>>> a1f175413a80dafc2f41f4a892515666ee5ef32d:src/Catalog.API/Repositories/ProductRepository.cs
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -32,15 +24,9 @@ namespace Catalog.API.Repositories
         public async Task<Product> GetProduct(string id)
         {
             return await _context
-<<<<<<< HEAD:src/services/catalog/Catalog.API/Repositories/ProductRepository.cs
                             .Products
                             .Find(p => p.Id == id)
                             .FirstOrDefaultAsync();
-=======
-                           .Products
-                           .Find(p => p.Id == id)
-                           .FirstOrDefaultAsync();
->>>>>>> a1f175413a80dafc2f41f4a892515666ee5ef32d:src/Catalog.API/Repositories/ProductRepository.cs
         }
 
         public async Task<IEnumerable<Product>> GetProductByName(string name)
