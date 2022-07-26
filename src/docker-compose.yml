@@ -1,9 +1,14 @@
 version: '3.4'
 
 services:
+<<<<<<< HEAD
   catalogdb:
     image: mongo
 
+=======
+  catalogdb: 
+  image: mongo
+>>>>>>> b6d86d4f3a3bff08dcd556c05662ffd0da956cf9
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
     build:
