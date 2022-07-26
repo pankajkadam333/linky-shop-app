@@ -56,4 +56,4 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 * **Catalog API -> http://localhost:8000/swagger/index.html**
 * **Basket API -> http://localhost:8001/swagger/index.html**
 
-this project are inspired by this **Course -> https://shre.ink/my3m
+this project are inspired by this **Course -> https://shre.ink/my3m**
