@@ -1,3 +1,4 @@
+using Discount.API.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,7 @@ namespace Discount.API
         {
 
             services.AddControllers();
+            services.AddScoped<IDiscountRepository, DiscountRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Discount.API", Version = "v1" });
