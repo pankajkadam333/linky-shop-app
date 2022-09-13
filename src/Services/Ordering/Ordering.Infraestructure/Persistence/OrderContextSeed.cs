@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ordering.Infrastructure.Persistence
+namespace Ordering.Infraestructure.Persistence
 {
     public class OrderContextSeed
     {
@@ -22,7 +22,7 @@ namespace Ordering.Infrastructure.Persistence
         {
             return new List<Order>
             {
-                new Order() {UserName = "swn", FirstName = "Mehmet", LastName = "Ozkaya", EmailAddress = "ezozkme@gmail.com", AddressLine = "Bahcelievler", Country = "Turkey", TotalPrice = 350 }
+                new Order() {UserName = "mwf", FirstName = "Marcos", LastName = "Ferreira", EmailAddress = "ezozkme@gmail.com", AddressLine = "São Paulo", Country = "Brazil", TotalPrice = 350 }
             };
         }
     }

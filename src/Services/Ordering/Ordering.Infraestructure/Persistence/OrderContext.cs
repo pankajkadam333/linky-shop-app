@@ -5,7 +5,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Ordering.Infrastructure.Persistence
+namespace Ordering.Infraestructure.Persistence
 {
     public class OrderContext : DbContext
     {
