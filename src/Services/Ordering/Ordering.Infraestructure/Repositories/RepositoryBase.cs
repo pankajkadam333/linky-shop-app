@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Ordering.Application.Contracts.Persistence;
 using Ordering.Domain.Common;
-using Ordering.Infraestructure.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Ordering.Infrastructure.Persistence;
 
-namespace Ordering.Infraestructure.Repositories
+namespace Ordering.Infrastructure.Repositories
 {
     public class RepositoryBase<T> : IAsyncRepository<T> where T : EntityBase
     {

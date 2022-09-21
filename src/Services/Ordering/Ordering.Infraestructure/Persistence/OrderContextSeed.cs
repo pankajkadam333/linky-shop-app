@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ordering.Infraestructure.Persistence
+namespace Ordering.Infrastructure.Persistence
 {
     public class OrderContextSeed
     {

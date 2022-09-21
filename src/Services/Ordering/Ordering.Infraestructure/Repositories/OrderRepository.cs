@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ordering.Infraestructure.Persistence;
+using Ordering.Infrastructure.Persistence;
 
-namespace Ordering.Infraestructure.Repositories
+namespace Ordering.Infrastructure.Repositories
 {
     public class OrderRepository : RepositoryBase<Order>, IOrderRepository
     {
