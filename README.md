@@ -55,5 +55,14 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
 * **Catalog API -> http://localhost:8000/swagger/index.html**
 * **Basket API -> http://localhost:8001/swagger/index.html**
+* **Discount API -> http://localhost:8002/swagger/index.html**
+* **Ordering API -> http://localhost:8004/swagger/index.html**
+<!-- * **Shopping.Aggregator -> http://localhost:8005/swagger/index.html** -->
+* **API Gateway -> http://localhost:8010/Catalog**
+<!-- * **Rabbit Management Dashboard -> http://localhost:15672**   -- guest/guest -->
+* **Portainer -> http://localhost:9000**   -- admin/admin1234
+* **pgAdmin PostgreSQL -> http://localhost:5050**   -- admin@aspnetrun.com/admin1234
+* **Elasticsearch -> http://localhost:9200** -- To Be Develop
+* **Kibana -> http://localhost:5601** -- To Be Develop
 
 this project are inspired by this **Course -> https://shre.ink/my3m**
