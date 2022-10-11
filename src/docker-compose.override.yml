@@ -8,11 +8,13 @@ services:
             - "27017:27017"
         volumes:
             - mongo_data:/data/db 
+
     basketdb:
         container_name: basketdb
         restart: always
         ports:
             - "6379:6379"
+    
     discountdb:
         container_name: discountdb
         environment:
@@ -24,6 +26,7 @@ services:
             - "5432:5432"
         volumes:
             - postgres_data:/var/lib/postgresql/data/
+    
     orderdb:
         container_name: orderdb
         environment:
@@ -53,6 +56,7 @@ services:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
             - portainer_data:/data
+    
     catalog.api:
         container_name: catalog.api
         environment:
@@ -83,6 +87,7 @@ services:
         - discountdb
         ports:
         - "8002:80"
+    
     discount.grpc:
         container_name: discount.grpc
         environment:
@@ -93,3 +98,12 @@ services:
         ports:
         - "8003:80"
 
+    ordering.api:
+    container_name: ordering.api
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+        - "ConnectionStrings:OrderingConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=SwN12345678"  
+    depends_on:
+        - orderdb
+    ports:
+        - "8004:80"
