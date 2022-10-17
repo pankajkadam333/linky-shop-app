@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
@@ -30,6 +30,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Application", "Services\Ordering\Ordering.Application\Ordering.Application.csproj", "{82732205-7516-4B9C-B314-65FA93E1402A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.API", "Services\Ordering\Ordering.API\Ordering.API.csproj", "{33B29C6B-4800-4A4A-BC68-79D771660659}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{E8C77BD9-DBD8-4FB4-AE2C-3AD1A6DFEDC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.Messages", "EventBus.Messages\EventBus.Messages.csproj", "{DD18D328-128C-4C5E-AACB-56D53E77754D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,11 +77,16 @@ Global
 		{33B29C6B-4800-4A4A-BC68-79D771660659}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33B29C6B-4800-4A4A-BC68-79D771660659}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33B29C6B-4800-4A4A-BC68-79D771660659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD18D328-128C-4C5E-AACB-56D53E77754D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD18D328-128C-4C5E-AACB-56D53E77754D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD18D328-128C-4C5E-AACB-56D53E77754D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD18D328-128C-4C5E-AACB-56D53E77754D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{DD18D328-128C-4C5E-AACB-56D53E77754D} = {E8C77BD9-DBD8-4FB4-AE2C-3AD1A6DFEDC3}
 		{D07A87C5-A7C0-4DFE-AA2A-E9F5DC3256E6} = {AA836899-00B0-4057-ABE7-952D9E257888}
 		{62DB31F6-7CD1-4013-AD42-28D03A041FCD} = {D07A87C5-A7C0-4DFE-AA2A-E9F5DC3256E6}
 		{34ECCD40-9F1B-469B-A3DC-C21F9C9CF052} = {AA836899-00B0-4057-ABE7-952D9E257888}

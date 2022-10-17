@@ -12,6 +12,9 @@ services:
 
   orderdb:
     image: msr.microsoft.com/mssql/server:2017:latest
+  
+  rabbitmq:
+    image: rabbitmq:3-management-apine
 
   pgadmin:
     image: dpage/pgadmin4
