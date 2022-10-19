@@ -15,7 +15,7 @@ namespace Ordering.Application.Behaviours
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
+        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, 
             RequestHandlerDelegate<TResponse> next)
         {
             try

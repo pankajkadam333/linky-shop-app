@@ -11,10 +11,10 @@ services:
     image: postgres
 
   orderdb:
-    image: msr.microsoft.com/mssql/server:2017:latest
-  
+    image: mcr.microsoft.com/mssql/server:2017-latest
+
   rabbitmq:
-    image: rabbitmq:3-management-apine
+    image: rabbitmq:3-management-alpine
 
   pgadmin:
     image: dpage/pgadmin4
@@ -52,10 +52,31 @@ services:
       context: .
       dockerfile: Services/Ordering/Ordering.API/Dockerfile
 
+  ocelotapigw:
+    image: ${DOCKER_REGISTRY-}ocelotapigw
+    build:
+      context: .
+      dockerfile: ApiGateways/OcelotApiGw/Dockerfile
+
+  shopping.aggregator:
+    image: ${DOCKER_REGISTRY-}shoppingaggregator
+    build:
+      context: .
+      dockerfile: ApiGateways/Shopping.Aggregator/Dockerfile
+
+  aspnetrunbasics:
+    image: ${DOCKER_REGISTRY-}aspnetrunbasics
+    build:
+      context: .
+      dockerfile: WebApps/AspnetRunBasics/Dockerfile
+
 volumes:
   mongo_data:
   portainer_data:
   postgres_data:
   pgadmin_data:
+
+
+
 
 

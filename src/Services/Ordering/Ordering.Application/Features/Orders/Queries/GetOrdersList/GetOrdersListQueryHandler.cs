@@ -21,7 +21,7 @@ namespace Ordering.Application.Features.Orders.Queries.GetOrdersList
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public async Task<List<OrdersVm>> Handle(GetOrdersListQuery request,
+        public async Task<List<OrdersVm>> Handle(GetOrdersListQuery request, 
             CancellationToken cancellationToken)
         {
             var orderList = await _orderRepository.GetOrdersByUserName(request.UserName);

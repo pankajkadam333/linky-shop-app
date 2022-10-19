@@ -18,7 +18,7 @@ namespace Ordering.Application.Behaviours
             _validators = validators ?? throw new ArgumentNullException(nameof(validators));
         }
 
-        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
+        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, 
             RequestHandlerDelegate<TResponse> next)
         {
             if (_validators.Any())
