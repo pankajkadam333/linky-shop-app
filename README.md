@@ -49,4 +49,4 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
 >Note: If you are running this application in macOS then use `docker.for.mac.localhost` as DNS name in `.env` file and the above URLs instead of `localhost`.
 
->Note: **This repository is the result of implementations of this course -> https://www.udemy.com/course/microservices-architecture-and-implementation-on-dotnet/?couponCode=FA24745CC57592AB612A** and 
+>Note: **This repository is the result of implementations of this course -> https://www.udemy.com/course/microservices-architecture-and-implementation-on-dotnet/?couponCode=FA24745CC57592AB612A** and was improved by me later
