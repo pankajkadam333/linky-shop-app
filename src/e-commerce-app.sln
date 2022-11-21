@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shopping.Aggregator", "ApiG
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{83A06FF4-6005-4F2C-AB80-C83D7ECA1BBA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aspnetrunbasics", "WebApps\CodeStore\CodeStore.csproj", "{A57A595B-CB18-4C9E-946D-3FF241402178}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aspnetrunbasics", "WebApps\AspnetRunBasics\AspnetRunBasics.csproj", "{A57A595B-CB18-4C9E-946D-3FF241402178}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{C24F7A83-262A-46B4-B60D-ACC0B2FE7C1E}"
 EndProject
