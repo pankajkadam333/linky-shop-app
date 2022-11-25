@@ -21,6 +21,14 @@ namespace Ordering.Application.Exceptions
                 .ToDictionary(failureGroup => failureGroup.Key, failureGroup => failureGroup.ToArray());
         }
 
+        public ValidationException(string message) : base(message)
+        {
+        }
+
+        public ValidationException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
+
         public IDictionary<string, string[]> Errors { get; }
     }
 }
