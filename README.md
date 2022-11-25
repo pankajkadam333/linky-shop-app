@@ -2,7 +2,7 @@
 
 See the overall picture of **implementations on microservices with .NET tools** on real-world **e-commerce microservices** project;
 
-![microservices_remastered](https://user-images.githubusercontent.com/1147445/110304529-c5b70180-800c-11eb-832b-a2751b5bda76.png)
+![microservices_remastered](/images/e-commerce%20app.png)
 
 There is a couple of microservices which implemented **e-commerce** modules over **Catalog, Basket, Discount** and **Ordering** microservices with **NoSQL (MongoDB, Redis)** and **Relational databases (PostgreSQL, Sql Server)** with communicating over **RabbitMQ Event Driven Communication** and using **Ocelot API Gateway**.
 
@@ -37,16 +37,12 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 * **Rabbit Management Dashboard -> http://localhost:15672**   -- guest/guest
 * **Portainer -> http://localhost:9000**   -- admin/admin1234
 * **pgAdmin PostgreSQL -> http://localhost:5050**   -- admin@aspnetrun.com/admin1234
-* **Elasticsearch -> http://localhost:9200** -- To Be Develop
-* **Kibana -> http://localhost:5601** -- To Be Develop
+* **Elasticsearch -> http://localhost:9200**
+* **Kibana -> http://localhost:5601**
+* **Web Frontend -> http://localhost:8006**
 
-* **Web Status -> http://localhost:8007** -- To Be Develop
-* **Web UI -> http://localhost:8006**
-
-5. Launch http://localhost:8007 in your browser to view the Web Status. Make sure that every microservices are healthy.
-6. Launch http://localhost:8006 in your browser to view the Web UI. You can use Web project in order to **call microservices over API Gateway**. When you **checkout the basket** you can follow **queue record on RabbitMQ dashboard**.
+1. Launch http://localhost:8007 in your browser to view the Web Status. Make sure that every microservices are healthy.
+2. Launch http://localhost:8006 in your browser to view the Web UI. You can use Web project in order to **call microservices over API Gateway**. When you **checkout the basket** you can follow **queue record on RabbitMQ dashboard**.
 
 
 >Note: If you are running this application in macOS then use `docker.for.mac.localhost` as DNS name in `.env` file and the above URLs instead of `localhost`.
-
->Note: **This repository is the result of implementations of this course -> https://www.udemy.com/course/microservices-architecture-and-implementation-on-dotnet/?couponCode=FA24745CC57592AB612A** and was improved by me later
