@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Permanent+Marker&display=swap');
+
+a,li {
+    text-decoration: none;
+}
+
+.navbar-brand {
+    padding-right: 1rem;
+    font-family: Permanent Marker,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    text-shadow: 3px 4px 2px rgba(165, 165, 165, 0.6);
+    color: rgba(2, 128, 201, 0.986)!important;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.nav-link{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    transition: 2s;
+    color: #007bff;
+}
+
+.bg-banner
+{
+background-image: url('../images/banners/banner-temp.jpeg'); 
+height: 100%; 
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover   
+}
+.bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+.category_block li:hover {
+    background-color: #007bff;
+}
+.category_block li:hover a {
+    color: #ffffff;
+}
+.category_block li a {
+    color: #343a40;
+}
+.add_to_cart_block .price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    margin-bottom: 0;
+}
+.add_to_cart_block .price_discounted {
+    color: #343a40;
+    text-align: center;
+    text-decoration: line-through;
+    font-size: 140%;
+}
+.product_rassurance {
+    padding: 10px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+.product_rassurance .list-inline {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.product_rassurance .list-inline li:hover {
+    color: #343a40;
+}
+.reviews_product .fa-star {
+    color: gold;
+}
+.pagination {
+    margin-top: 20px;
+}
+

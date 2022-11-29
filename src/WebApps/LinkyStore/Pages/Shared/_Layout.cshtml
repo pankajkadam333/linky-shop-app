@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="~/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="~/images/favicon/site.webmanifest">
+    <!-- CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+    <link href="~/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light bg-gradient">
+        <div class="container">
+            <a class="navbar-brand" href="/Index">
+                <img src="~/images/logo.png" width="90" height="90" class="d-inline-block align-center" alt="logo">
+                Linky<small class="text-muted">Shop</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-area="" asp-page="/Index">Home <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Product/Index">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Cart/Index">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Orders/Index">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Contact/Index">Contact</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0">
+                    <a class="btn btn-success btn-sm ml-3" asp-area="" asp-page="/Cart/Index">
+                        <i class="fa fa-shopping-cart"></i> Cart
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div style="min-height: 625px;">
+        @RenderBody()
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="section-footer border-top pt-3">
+        <div class="container">
+            <section class="footer-top padding-y">
+                <div class="row">
+                    <aside class="col-md-4">
+                        <article class="mr-3">
+                            <img src="~/images/logo.png" class="logo-footer">
+                            <p class="mt-3">A complete Microservices project based in .NET and best practices.</p>
+                            <div>
+
+                                <a class="btn btn-icon btn-light" href="https://www.instagram.com/marcosferreira.17/"><i
+                                        class="fa fa-instagram"></i></a>
+                                <a class="btn btn-icon btn-light" href="https://www.linkedin.com/in/marcoswferreira/"><i
+                                        class="fa fa-linkedin"></i></a>
+                                <a class="btn btn-icon btn-light"
+                                    href="https://github.com/MarcosFerreira17/linky-shop-app"><i
+                                        class="fa fa-github"></i></a>
+                            </div>
+                        </article>
+                    </aside>
+                    <aside class="col-sm-4 col-md-3">
+                        <h6 class="title">About</h6>
+                        <ul class="list-unstyled">
+                            <li> <a target="_blank" href="https://github.com/MarcosFerreira17/linky-shop-app">About
+                                    us</a>
+                            </li>
+                            <li> <a target="_blank"
+                                    href="https://github.com/MarcosFerreira17/linky-shop-app">Services</a>
+                            </li>
+                            <li> <a target="_blank" href="https://github.com/MarcosFerreira17/linky-shop-app">Terms of
+                                    use</a></li>
+                            <li> <a target="_blank" href="https://github.com/MarcosFerreira17/linky-shop-app">FAQ</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    <aside class="col-sm-4 col-md-3">
+                        <h6 class="title">Services</h6>
+                        <ul class="list-unstyled">
+                            <li> <a asp-controller="Order" asp-action="MyOrders">My Orders</a></li>
+                            <li> <a target="_blank"
+                                    href="https://github.com/MarcosFerreira17/linky-shop-app">Profile</a>
+                            </li>
+                            <li> <a target="_blank" href="https://github.com/MarcosFerreira17/linky-shop-app">Canceled
+                                    orders</a></li>
+                            <li> <a target="_blank"
+                                    href="https://github.com/MarcosFerreira17/linky-shop-app">Chargeback</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    <aside class="col-sm-2 col-md-2">
+                        <h6 class="title">Mobile</h6>
+                        <a target="_blank" href="https://github.com/MarcosFerreira17/linky-shop-app"
+                            class="d-block mb-2"><img src="~/images/banners/appstore.png" height="40"></a>
+                        <a target="_blank" href="https://github.com/MarcosFerreira17/linky-shop-app"
+                            class="d-block mb-2"><img src="~/images/banners/playmarket.png" height="40"></a>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="footer-copyright border-top pt-2">
+                <p class="float-left text-muted"> linkyStore Project</p>
+                <p class="float-right text-muted">
+                    Proudly developed and supported by
+                    <a target="_blank" href="https://github.com/MarcosFerreira17">Marcos Ferreira</a> - ❤ <img
+                        alt="BRASIL ❤" title="BRASIL ❤" src="https://flagcdn.com/24x18/br.png">
+                </p>
+            </section>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="//code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" type="text/javascript"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //Plus & Minus for Quantity product
+        $(document).ready(function () {
+            var quantity = 1;
+
+            $('.quantity-right-plus').click(function (e) {
+                e.preventDefault();
+                var quantity = parseInt($('#quantity').val());
+                $('#quantity').val(quantity + 1);
+            });
+
+            $('.quantity-left-minus').click(function (e) {
+                e.preventDefault();
+                var quantity = parseInt($('#quantity').val());
+                if (quantity > 1) {
+                    $('#quantity').val(quantity - 1);
+                }
+            });
+
+        });
+
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+    </script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

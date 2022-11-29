@@ -68,11 +68,11 @@ services:
       context: .
       dockerfile: ApiGateways/Shopping.Aggregator/Dockerfile
 
-  aspnetrunbasics:
-    image: ${DOCKER_REGISTRY-}aspnetrunbasics
+  linkystore:
+    image: ${DOCKER_REGISTRY-}linkystore
     build:
       context: .
-      dockerfile: WebApps/AspnetRunBasics/Dockerfile 
+      dockerfile: WebApps/LinkyStore/Dockerfile 
 
 volumes:
   elasticsearch-data:
