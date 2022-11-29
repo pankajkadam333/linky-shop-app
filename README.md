@@ -1,4 +1,4 @@
-# GeekShop
+# Linky Shop
 
 See the overall picture of **implementations on microservices with .NET tools** on real-world **e-commerce microservices** project;
 
