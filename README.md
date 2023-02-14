@@ -46,7 +46,7 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 - API Gateway -> **[http://localhost:8010/Catalog](http://localhost:8010/Catalog)**
 - Rabbit Management Dashboard -> **[http://localhost:15672](http://localhost:15672/)** (guest/guest)
 - Portainer -> **[http://localhost:9000](http://localhost:9000/)** (admin/admin1234)
-- pgAdmin PostgreSQL -> **[http://localhost:5050](http://localhost:5050/)** (**[admin@aspnetrun.com](mailto:admin@aspnetrun.com)**/admin1234)
+- pgAdmin PostgreSQL -> **[http://localhost:5050](http://localhost:5050/)** (**[admin@mnia.com](mailto:admin@mnia.com)**/admin1234)
 - Elasticsearch -> **[http://localhost:9200](http://localhost:9200/)**
 - Kibana -> **[http://localhost:5601](http://localhost:5601/)**
 - Web Frontend -> **[http://localhost:8006](http://localhost:8006/)**
