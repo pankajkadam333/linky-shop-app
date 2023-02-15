@@ -1,9 +1,7 @@
-﻿namespace Ordering.Application.Models
+﻿namespace Ordering.Application.Models;
+public class EmailSettings
 {
-    public class EmailSettings
-    {
-        public string ApiKey { get; set; }
-        public string FromAddress { get; set; }
-        public string FromName { get; set; }
-    }
+    public string ApiKey { get; set; }
+    public string FromAddress { get; set; }
+    public string FromName { get; set; }
 }

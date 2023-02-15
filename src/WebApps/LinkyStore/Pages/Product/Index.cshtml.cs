@@ -49,7 +49,7 @@ namespace LinkyStore.Web
         {
             var product = await _catalogService.GetCatalog(productId);
 
-            var userName = "swn";
+            var userName = "mnia";
             var basket = await _basketService.GetBasket(userName);
 
             basket.Items.Add(new BasketItemModel
@@ -61,7 +61,7 @@ namespace LinkyStore.Web
                 Color = "Black"
             });
 
-            var basketUpdated = await _basketService.UpdateBasket(basket);
+            await _basketService.UpdateBasket(basket);
 
             return RedirectToPage("Cart/Index");
         }

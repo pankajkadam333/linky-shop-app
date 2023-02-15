@@ -6,43 +6,41 @@ using SendGrid;
 using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
 
-namespace Ordering.Infrastructure.Mail
+namespace Ordering.Infrastructure.Mail;
+public class EmailService : IEmailService
 {
-    public class EmailService : IEmailService
+    public EmailSettings _emailSettings { get; }
+    public ILogger<EmailService> _logger { get; }
+
+    public EmailService(IOptions<EmailSettings> emailSettings, ILogger<EmailService> logger)
     {
-        public EmailSettings _emailSettings { get; }
-        public ILogger<EmailService> _logger { get; }
+        _emailSettings = emailSettings.Value;
+        _logger = logger;
+    }
 
-        public EmailService(IOptions<EmailSettings> emailSettings, ILogger<EmailService> logger)
+    public async Task<bool> SendEmail(Email email)
+    {
+        var client = new SendGridClient(_emailSettings.ApiKey);
+
+        var subject = email.Subject;
+        var to = new EmailAddress(email.To);
+        var emailBody = email.Body;
+
+        var from = new EmailAddress
         {
-            _emailSettings = emailSettings.Value;
-            _logger = logger;
-        }
+            Email = _emailSettings.FromAddress,
+            Name = _emailSettings.FromName
+        };
 
-        public async Task<bool> SendEmail(Email email)
-        {
-            var client = new SendGridClient(_emailSettings.ApiKey);
+        var sendGridMessage = MailHelper.CreateSingleEmail(from, to, subject, emailBody, emailBody);
+        var response = await client.SendEmailAsync(sendGridMessage);
 
-            var subject = email.Subject;
-            var to = new EmailAddress(email.To);
-            var emailBody = email.Body;
+        _logger.LogInformation("Email sent.");
 
-            var from = new EmailAddress
-            {
-                Email = _emailSettings.FromAddress,
-                Name = _emailSettings.FromName
-            };
+        if (response.StatusCode == System.Net.HttpStatusCode.Accepted || response.StatusCode == System.Net.HttpStatusCode.OK)
+            return true;
 
-            var sendGridMessage = MailHelper.CreateSingleEmail(from, to, subject, emailBody, emailBody);
-            var response = await client.SendEmailAsync(sendGridMessage);
-
-            _logger.LogInformation("Email sent.");
-
-            if (response.StatusCode == System.Net.HttpStatusCode.Accepted || response.StatusCode == System.Net.HttpStatusCode.OK)
-                return true;
-
-            _logger.LogError("Email sending failed.");
-            return false;
-        }
+        _logger.LogError("Email sending failed.");
+        return false;
     }
 }

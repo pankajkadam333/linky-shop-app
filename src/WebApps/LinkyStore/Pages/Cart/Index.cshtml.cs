@@ -21,7 +21,7 @@ namespace LinkyStore.Web
 
         public async Task<IActionResult> OnGetAsync()
         {
-            var userName = "swn";
+            var userName = "mnia";
             Cart = await _basketService.GetBasket(userName);
 
             return Page();
@@ -29,7 +29,7 @@ namespace LinkyStore.Web
 
         public async Task<IActionResult> OnPostRemoveToCartAsync(string productId)
         {
-            var userName = "swn";
+            var userName = "mnia";
             var basket = await _basketService.GetBasket(userName);
 
             var item = basket.Items.Single(x => x.ProductId == productId);
@@ -37,7 +37,7 @@ namespace LinkyStore.Web
 
             var basketUpdated = await _basketService.UpdateBasket(basket);
 
-            return RedirectToPage();
+            return RedirectToPage("Index");
         }
     }
 }

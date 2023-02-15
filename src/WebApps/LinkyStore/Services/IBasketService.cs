@@ -1,12 +1,10 @@
 ﻿using LinkyStore.Web.Models;
 using System.Threading.Tasks;
 
-namespace LinkyStore.Web.Services
+namespace LinkyStore.Web.Services;
+public interface IBasketService
 {
-    public interface IBasketService
-    {
-        Task<BasketModel> GetBasket(string userName);
-        Task<BasketModel> UpdateBasket(BasketModel model);
-        Task CheckoutBasket(BasketCheckoutModel model);
-    }
+    Task<BasketModel> GetBasket(string userName);
+    Task<BasketModel> UpdateBasket(BasketModel model);
+    Task CheckoutBasket(BasketCheckoutModel model);
 }

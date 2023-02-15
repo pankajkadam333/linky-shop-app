@@ -2,13 +2,11 @@
 using EventBus.Messages.Events;
 using Ordering.Application.Features.Orders.Commands.CheckoutOrder;
 
-namespace Ordering.API.Mapping
+namespace Ordering.API.Mapping;
+public class OrderingProfile : Profile
 {
-    public class OrderingProfile : Profile
+    public OrderingProfile()
     {
-        public OrderingProfile()
-        {
-            CreateMap<CheckoutOrderCommand, BasketCheckoutEvent>().ReverseMap();
-        }
+        CreateMap<CheckoutOrderCommand, BasketCheckoutEvent>().ReverseMap();
     }
 }

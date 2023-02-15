@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace LinkyStore.Web.Models
+namespace LinkyStore.Web.Models;
+public class BasketModel
 {
-    public class BasketModel
-    {
-        public string UserName { get; set; }
-        public List<BasketItemModel> Items { get; set; } = new List<BasketItemModel>();
-        public decimal TotalPrice { get; set; }
-    }
+    public string UserName { get; set; }
+    public List<BasketItemModel> Items { get; set; } = new List<BasketItemModel>();
+    public decimal TotalPrice { get; set; }
 }

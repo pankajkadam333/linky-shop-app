@@ -24,12 +24,9 @@ namespace LinkyStore.Web.Services
         public async Task<BasketModel> UpdateBasket(BasketModel model)
         {
             var response = await _client.PostAsJson($"/Basket", model);
-            if (response.IsSuccessStatusCode)
-                return await response.ReadContentAs<BasketModel>();
-            else
-            {
-                throw new Exception("Something went wrong when calling api.");
-            }
+            return response.IsSuccessStatusCode
+                ? await response.ReadContentAs<BasketModel>()
+                : throw new Exception("Something went wrong when calling api.");
         }
 
         public async Task CheckoutBasket(BasketCheckoutModel model)

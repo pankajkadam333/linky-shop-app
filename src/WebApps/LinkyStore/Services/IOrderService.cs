@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace LinkyStore.Web.Services
+namespace LinkyStore.Web.Services;
+public interface IOrderService
 {
-    public interface IOrderService
-    {
-        Task<IEnumerable<OrderResponseModel>> GetOrdersByUserName(string userName);
-    }
-
+    Task<IEnumerable<OrderResponseModel>> GetOrdersByUserName(string userName);
 }

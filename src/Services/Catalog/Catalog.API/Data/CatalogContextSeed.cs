@@ -5,22 +5,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Catalog.API.Data
-{
-    public class CatalogContextSeed
-    {
-        public static void SeedData(IMongoCollection<Product> productCollection)
-        {
-            bool existProduct = productCollection.Find(p => true).Any();
-            if (!existProduct)
-            {
-                productCollection.InsertManyAsync(GetPreconfiguredProducts());
-            }
-        }
+namespace Catalog.API.Data;
 
-        private static IEnumerable<Product> GetPreconfiguredProducts()
+public class CatalogContextSeed
+{
+    public static void SeedData(IMongoCollection<Product> productCollection)
+    {
+        bool existProduct = productCollection.Find(p => true).Any();
+        if (!existProduct)
         {
-            return new List<Product>()
+            productCollection.InsertManyAsync(GetPreconfiguredProducts());
+        }
+    }
+
+    private static IEnumerable<Product> GetPreconfiguredProducts()
+    {
+        return new List<Product>()
             {
                 new Product()
                 {
@@ -83,6 +83,5 @@ namespace Catalog.API.Data
                     Category = "Home Kitchen"
                 }
             };
-        }
     }
 }
