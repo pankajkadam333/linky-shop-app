@@ -15,7 +15,7 @@ public class JwtWebTokenConfiguration
     {
         _configuration = configuration;
     }
-    public string CreateToken(UserDto user)
+    public string CreateToken(User user)
     {
         List<Claim> claims = new()
         {

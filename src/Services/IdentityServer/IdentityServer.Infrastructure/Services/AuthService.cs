@@ -20,9 +20,10 @@ public class AuthService : IAuthService
     protected readonly IAuthRepository _authRepository;
     protected readonly IMapper _mapper;
     protected readonly ILogger<IAuthService> _logger;
-    protected readonly JwtWebTokenConfiguration _jwtWebTokenConfiguration;
-    public AuthService(IAuthRepository authRepository, IMapper mapper, ILogger<IAuthService> logger)
+    protected readonly IConfiguration _configuration;
+    public AuthService(IConfiguration configuration, IAuthRepository authRepository, IMapper mapper, ILogger<IAuthService> logger)
     {
+        _configuration = configuration;
         _authRepository = authRepository;
         _mapper = mapper;
         _logger = logger;
@@ -58,8 +59,8 @@ public class AuthService : IAuthService
             _logger.LogError("Username or password is incorrect");
             throw new NotFoundException("Username or password is incorrect.");
         }
-
-        return _jwtWebTokenConfiguration.CreateToken(request);
+        var tokenHandler = new JwtWebTokenConfiguration(_configuration);
+        return tokenHandler.CreateToken(entityFromDb);
     }
 
     public async Task Update(long id, UserDto inputDto)
