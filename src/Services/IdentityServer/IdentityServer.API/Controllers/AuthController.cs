@@ -6,16 +6,16 @@ namespace IdentityServer.API.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]
-public class AuthController : ControllerBase
+public class AuthenticationController : ControllerBase
 {
     private readonly IAuthService _authService;
 
-    public AuthController(IAuthService authService)
+    public AuthenticationController(IAuthService authService)
     {
         _authService = authService;
     }
 
-    [HttpPost("register")]
+    [HttpPost("Register")]
     [Produces("application/json")]
     [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(string))]
     [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
@@ -26,7 +26,7 @@ public class AuthController : ControllerBase
         return Ok("User created successfully.");
     }
 
-    [HttpPost("login")]
+    [HttpPost("Login")]
     [Produces("application/json")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
     [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]

@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Security.Claims;
-using System.Text;
 using AutoMapper;
 using IdentityServer.Domain.Dtos;
 using IdentityServer.Domain.Entities;
@@ -11,7 +8,6 @@ using IdentityServer.Infrastructure.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
 
 namespace IdentityServer.Infrastructure.Services;
 

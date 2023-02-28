@@ -19,7 +19,8 @@ public class JwtWebTokenConfiguration
     {
         List<Claim> claims = new()
         {
-            new Claim(ClaimTypes.Name, user.Username)
+            new Claim(ClaimTypes.Name, user.Username),
+            new Claim(ClaimTypes.Role, user.Role.Name)
         };
 
         string ExpiryTimeToken = _configuration.GetSection("JwtSettings:ExpiryInMinutes").Value;
