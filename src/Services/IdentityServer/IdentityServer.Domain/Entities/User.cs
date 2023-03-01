@@ -8,7 +8,7 @@ public class User : EntityBase<long>
     public byte[] PasswordHash { get; private set; }
     public byte[] PasswordSalt { get; private set; }
     public long RoleId { get; set; }
-    public Role Role { get; private set; }
+    public Role Role { get; set; }
 
     public void CreatePasswordHash(string password)
     {

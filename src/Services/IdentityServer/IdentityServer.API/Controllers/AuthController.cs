@@ -32,6 +32,7 @@ public class AuthenticationController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
     public async Task<IActionResult> Login([FromBody] UserDto request)
     {
-        return Ok(await _authService.Login(request));
+        var token = await _authService.Login(request);
+        return Ok(token);
     }
 }

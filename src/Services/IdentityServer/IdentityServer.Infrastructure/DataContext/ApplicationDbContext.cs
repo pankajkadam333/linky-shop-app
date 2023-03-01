@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using IdentityServer.Domain.Entities;
+using IdentityServer.Infrastructure.DataContext.Maps;
 
 namespace IdentityServer.Infrastructure.DataContext;
 public class ApplicationDbContext : DbContext
@@ -10,5 +11,7 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfiguration(new UserMap());
+        modelBuilder.ApplyConfiguration(new RoleMap());
     }
 }

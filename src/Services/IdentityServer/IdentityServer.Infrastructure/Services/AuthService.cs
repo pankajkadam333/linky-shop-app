@@ -55,7 +55,7 @@ public class AuthService : IAuthService
             _logger.LogError("Username or password is incorrect");
             throw new NotFoundException("Username or password is incorrect.");
         }
-        var tokenHandler = new JwtWebTokenConfiguration(_configuration);
+        var tokenHandler = new JwtWebTokenConfiguration(_configuration, _authRepository);
         return tokenHandler.CreateToken(entityFromDb);
     }
 
