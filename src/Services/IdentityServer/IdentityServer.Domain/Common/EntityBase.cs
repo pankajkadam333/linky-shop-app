@@ -1,6 +1,6 @@
 namespace IdentityServer.Domain.Common;
 
-public class EntityBase<Tid>
+public abstract class EntityBase<Tid>
 {
     protected EntityBase() { }
     protected EntityBase(Tid id)

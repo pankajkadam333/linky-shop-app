@@ -59,10 +59,25 @@ public class AuthService : IAuthService
         return tokenHandler.CreateToken(entityFromDb);
     }
 
-    public async Task Update(long id, UserDto inputDto)
+    public async Task Update(long id, UserDto request)
     {
-        await SearchForExistingId(id);
-        await _authRepository.Update(_mapper.Map<User>(inputDto));
+        if (request.Username is null || request.Password is null)
+        {
+            _logger.LogError("Username or password is null");
+            throw new NotFoundException("Username or password is null.");
+        }
+
+        var updatedUser = await SearchForExistingId(id);
+
+        if (await _authRepository.FindByCondition(x => x.Username == request.Username && x.Id != id).AnyAsync())
+        {
+            _logger.LogError("Username already exists");
+            throw new NotFoundException("Username already exists.");
+        }
+
+        updatedUser.SetUsername(request.Username);
+        updatedUser.SetPassword(request.Password);
+        await _authRepository.Update(updatedUser);
     }
 
     public async Task Delete(long id)
